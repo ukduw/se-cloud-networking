@@ -174,7 +174,27 @@ VPC (10.0.0.0/16)
 
 
 ## Route Tables
-Tells the network where to send traffic. **Every subnet in a VPC must be associated witgh exactly one route table.**
+Tells the network where to send traffic. **Every subnet in a VPC must be associated with exactly one route table.**
+- If destination IP matches X, send to Y
+
+**Components of a route**:
+- **Destination** - IP Range (CIDR)
+- **Target** - Where to send traffic (IGW, NAT, local (inside VPC), VPN, instance...)
+
+![Route table example](diagrams/Route-table-example.jpg)
+
+**0.0.0.0/0 means "internet"** (as opposed to local)
+
+A subnet's route table decides which gateway different traffic uses.
+
+Outbound private -> internet:
+- Instance -> Subnet -> Route table -> NAT -> IGW -> Internet
+
+Inbound internet -> public instance
+- Instance -> IGW -> Route table -> Public subnet -> Instance (with public IP)
+
+
+**Route table association** links a route table to a network entity (e.g. subnet, gateway...), directing network traffic for that entity based on the associated route table.
 
 
 ### Security Groups (SGs) and Network Access Control Lists (NACLs)
