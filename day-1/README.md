@@ -198,9 +198,21 @@ Inbound internet -> public instance
 
 
 ### Security Groups (SGs) and Network Access Control Lists (NACLs)
+Security Groups (SGs) are **stateful, instance-level firewalls**. They control what traffic is allowed to reach/leave a specific resources, e.g. EC2 instances, load balancers, databases...
+- **Stateful**: if inbound traffic is allowed, the response is automatically allowed outbound, even if the rules don't explicitly allow it. 
+- SGs can **only allow** traffic, **not explicitly block it**.
 
 
-### DNS
+Network ACLs (NACLs) are **stateless, subnet-level firewalls**. They regulate traffic entering/exiting an **entire subnet**.
+- **Stateless**: responses must be allowed separately
+- NACLs can both **allow and deny**
+- Rules are **evaluated in ascending order** until a match is found, **then evaluation stops**, so **rule order matters**
+- Default NACLs allow all, while custom NACLs deny all by default...
+
+
+### Domain Name System (DNS)
+
+
 
 
 ### Route53
