@@ -86,6 +86,48 @@ A method used by routers to rewrite IP addresses on packets in transit.
 
 
 ### Subnets
+Takes a larger IP block and splits it into smaller blocks. For example:
+
+VPC CIDR:
+- 10.0.0.0/16 (65,536 IPs)
+
+Subnets inside it:
+- 10.0.1.0/24 (256 IPs)
+- 10.0.2.0/24 (256 IPs)
+- 10.0.3.0/24 (256 IPs)
+
+Each subnet has:
+- **Network address** (first IP; identifies the subnet)
+- **Broadcast address** (last IP; broadcasts within subnet)
+- **Usable IPs** (everything in between)
+
+**Subnet Masks**   
+Another way of describing how many bits are used for the network part. For example:
+
+CIDR: 
+- 192.168.1.0/24
+    - CIDR prefixes:
+        - /8 = huge; big orgs
+        - /16 = VPCs
+        - /24 = small subnets
+        - /28 = tiny subnets
+        - /32 = single address (host route)
+
+Subnet mask:
+- 255.255.255.0
+    - 255 in binary = 11111111 (8) = network bits
+    - 0 in binary = 00000000 (8) = host bits
+
+
+**An IP address belongs to exactly one subnet**
+
+**A subnet groups multiple IP addresses**
+
+**The CIDR describes which part of the IP is the network vs host portion**
+- e.g. CIDR: 10.1.0.0/24
+- An IP inside it: 10.1.0.37
+    - Network part: 10.1.0
+    - Host part: 37
 
 
 ### Gateways
