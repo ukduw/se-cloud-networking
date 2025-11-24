@@ -118,7 +118,7 @@ Subnet mask:
     - 255 in binary = 11111111 (8) = network bits
     - 0 in binary = 00000000 (8) = host bits
 
-![alt text](diagrams/Subnet-masks.png)
+![Subnet mask anatomy](diagrams/Subnet-masks.png)
 
 **An IP address belongs to exactly one subnet**
 
@@ -165,7 +165,7 @@ VPC (10.0.0.0/16)
         -Private EC2 instances, containers, app servers that call external APIs...
 ```
 
-![alt text](diagrams/Gateways.webp)
+![Gateways diagram](diagrams/Gateways.webp)
 
 **Fully private architecture (no internet)** is completely private, with on-prem network only. This is for particularly sensitive workloads.
 
@@ -210,12 +210,16 @@ Network ACLs (NACLs) are **stateless, subnet-level firewalls**. They regulate tr
 - Rules are **evaluated in ascending order** until a match is found, **then evaluation stops**, so **rule order matters**
 - Default NACLs allow all, while custom NACLs deny all by default...
 
+![SG and NACL diagram](diagrams/SGs-NACLs.webp)
+
 
 ### Domain Name System (DNS)
 Translates human-readable domain names into computer-readable IP addresses. 
 - Browser sends request to DNS server
 - DNS server looks up corresponding IP address in database and sends it back
 - Browser then connects to correct server to load the webpage.
+
+![DNS lookup process](diagrams/DNS-lookup-process.png)
 
 
 ### Route53
