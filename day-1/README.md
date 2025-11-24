@@ -50,10 +50,14 @@ Unique identifiers for each device on a network.
 - 4.3bil unique addresses
 - e.g. 192.168.0.1
 
+![IPv4 anatomy](IPv4.png)
+
 **IPv6** (alphanumeric hexadecimal notation)
 - 128bit address
 - 7.9x10^28 unique addresses (**effectively unlimited**)
 - 50b2:6400:0000:0000:6c3a:b17d:0000:10a9
+
+![IPv6 anatomy](IPv6.png)
 
 **Each IP address has two parts**:
 - **Network portion** - which network the device belongs to
@@ -77,6 +81,8 @@ Unique identifiers for each device on a network.
 A method used by routers to rewrite IP addresses on packets in transit.
 - **Allows multiple devices on a private network to share a single public IP address to connect to the internet**
 - This conserves public IPv4 addresses and provides a layer of security by **hiding the private IP addresses from the public network**
+
+![NAT diagram](NAT-diagram.png)
 
 
 ### Subnets
