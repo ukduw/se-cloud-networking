@@ -118,6 +118,7 @@ Subnet mask:
     - 255 in binary = 11111111 (8) = network bits
     - 0 in binary = 00000000 (8) = host bits
 
+![subnet masks](Subnet-masks.png)
 
 **An IP address belongs to exactly one subnet**
 
