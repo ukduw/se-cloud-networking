@@ -6,7 +6,7 @@ Isolated, private section of a public cloud, allowing for greater control. VPCs 
 - **Security** (firewalls, SGs, NACLs)
 - **Gateways** (internet + NAT (Network Address Translation) gateways, VPN...)
 
-![VPC structure](VPC.gif)
+![VPC structure](diagrams/VPC.gif)
 
 **VPCs are IaaS.**
 
@@ -21,7 +21,7 @@ CIDR blocks are denoted by **IP/length**, e.g.
 - e.g. 10.0.0.0/16 = **65,536 private IPs**
     - from 10.0.0.0 to 10.0.255.255
 
-![CIDR ranges](CIDR-ranges.png)
+![CIDR ranges](diagrams/CIDR-ranges.png)
 
 - **/8** = ~16mil IPs
 - **/16** = 65,536
@@ -50,14 +50,14 @@ Unique identifiers for each device on a network.
 - 4.3bil unique addresses
 - e.g. 192.168.0.1
 
-![IPv4 anatomy](IPv4.png)
+![IPv4 anatomy](diagrams/IPv4.png)
 
 **IPv6** (alphanumeric hexadecimal notation)
 - 128bit address
 - 7.9x10^28 unique addresses (**effectively unlimited**)
 - 50b2:6400:0000:0000:6c3a:b17d:0000:10a9
 
-![IPv6 anatomy](IPv6.png)
+![IPv6 anatomy](diagrams/IPv6.png)
 
 **Each IP address has two parts**:
 - **Network portion** - which network the device belongs to
@@ -82,7 +82,7 @@ A method used by routers to rewrite IP addresses on packets in transit.
 - **Allows multiple devices on a private network to share a single public IP address to connect to the internet**
 - This conserves public IPv4 addresses and provides a layer of security by **hiding the private IP addresses from the public network**
 
-![NAT diagram](NAT-diagram.png)
+![NAT diagram](diagrams/NAT-diagram.png)
 
 
 ### Subnets
@@ -118,7 +118,7 @@ Subnet mask:
     - 255 in binary = 11111111 (8) = network bits
     - 0 in binary = 00000000 (8) = host bits
 
-![subnet masks](Subnet-masks.png)
+![alt text](diagrams/Subnet-masks.png)
 
 **An IP address belongs to exactly one subnet**
 
@@ -132,6 +132,40 @@ Subnet mask:
 
 
 ### Gateways
+A device or service that connects one network to another and manages how traffic flows between them.
+
+A gateway may connect:
+- Private network -> internet
+- One VPC/subnet -> another VPC/subnet
+- Data center -> a cloud VPC
+- Local machine -> home network router
+
+**Internet Gateway (IGW)**   
+Connects a private network to the public internet.
+- Allows outbound internet access (public IP)
+- Allows inbound traffic (only to public IPs)
+- Routing, not NAT
+- **Doesn't hide private IPs** - expects public IPs
+
+**NAT Gateway**   
+Allows private resources to access the internet **without being exposed to it.**
+- **Only allows outbound connections** (private -> internet)
+- **Blocks inbound connections** from unknown sources
+- **Translates** internet private IPs into one public IP
+- Private instances remain unreachable from the public internet
+
+**Architecture**   
+The most common architecture is **public + private subnet architecture**. 3-tier architecture for cloud environments:
+
+```
+VPC (10.0.0.0/16)
+    -Public Subnet (10.0.1.0/24) -> IGW
+        -Public web server, load balancers...
+    -Private Subnet (10.0.2.0/24) -> NAT
+        -Private EC2 instances, containers, app servers that call external APIs...
+```
+
+![alt text](diagrams/Gateways.webp)
 
 
 ### Route Tables
