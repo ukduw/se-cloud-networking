@@ -43,6 +43,40 @@ The VPC's CIDR block must be the **widest**, so the CIDR blocks of **its subnets
 
 
 ### IP Addresses
+Unique identifiers for each device on a network. 
+
+**IPv4** (numeric dot notation)
+- 4 Numbers (0-255), representing 32bits
+- 4.3bil unique addresses
+- e.g. 192.168.0.1
+
+**IPv6** (alphanumeric hexadecimal notation)
+- 128bit address
+- 7.9x10^28 unique addresses (**effectively unlimited**)
+- 50b2:6400:0000:0000:6c3a:b17d:0000:10a9
+
+**Each IP address has two parts**:
+- **Network portion** - which network the device belongs to
+- **Host portion** - which specific device (host) in the network it is
+
+**A subnetmask / CIDR determines how many bits belong to each part.**
+
+**Reserved IP ranges**:
+- Private use IP ranges:
+    - 10.0.0.0/8
+    - 172.16.0.0/12
+    - 192.168.0.0/16
+- Other reserved ranges:
+    - 127.0.0.0/8 (loopback)
+    - 169.254.0.0/16 (link-local)
+    - 224.0.0.0/4 (multicast)
+    - 240.0.0.0/4 (future use)
+    - 100.64.0.0/10 (carrier-grade NAT)
+
+**NATs** (Network Address Translation)   
+A method used by routers to rewrite IP addresses on packets in transit.
+- **Allows multiple devices on a private network to share a single public IP address to connect to the internet**
+- This conserves public IPv4 addresses and provides a layer of security by **hiding the private IP addresses from the public network**
 
 
 ### Subnets
