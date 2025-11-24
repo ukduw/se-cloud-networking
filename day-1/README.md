@@ -201,6 +201,7 @@ Inbound internet -> public instance
 Security Groups (SGs) are **stateful, instance-level firewalls**. They control what traffic is allowed to reach/leave a specific resources, e.g. EC2 instances, load balancers, databases...
 - **Stateful**: if inbound traffic is allowed, the response is automatically allowed outbound, even if the rules don't explicitly allow it. 
 - SGs can **only allow** traffic, **not explicitly block it**.
+- Typically based on the principle of **least privilege** with a layered defensive approach per instance, allowing only necessary traffic for function.
 
 
 Network ACLs (NACLs) are **stateless, subnet-level firewalls**. They regulate traffic entering/exiting an **entire subnet**.
