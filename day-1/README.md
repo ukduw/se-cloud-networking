@@ -212,8 +212,10 @@ Network ACLs (NACLs) are **stateless, subnet-level firewalls**. They regulate tr
 
 
 ### Domain Name System (DNS)
-
-
+Translates human-readable domain names into computer-readable IP addresses. 
+- Browser sends request to DNS server
+- DNS server looks up corresponding IP address in database and sends it back
+- Browser then connects to correct server to load the webpage.
 
 
 ### Route53
