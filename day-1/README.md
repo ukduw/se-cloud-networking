@@ -167,6 +167,11 @@ VPC (10.0.0.0/16)
 
 ![alt text](diagrams/Gateways.webp)
 
+**Fully private architecture (no internet)** is completely private, with on-prem network only. This is for particularly sensitive workloads.
+
+**Hybrid architecture** is on-prem + cloud:
+- On-prem -> VPN -> Cloud VPC
+
 
 ### Route Tables
 
