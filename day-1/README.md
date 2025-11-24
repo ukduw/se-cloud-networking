@@ -219,7 +219,16 @@ Translates human-readable domain names into computer-readable IP addresses.
 
 
 ### Route53
+AWS' DNS and traffic-routing system. 
+- Public DNS
+- Private DNS inside a VPC
+- Health check and failover routing
+- Latency and geo-location based routing
+- Alias records - AWS feature for use with load balancers, CloudFront...
 
-
-### VPC designs
+Useful features:
+- Fully integrates with VPCs
+- Can host internal DNS zones
+- Supports weighted, failover, and geo-location routing
+- AWS-native alias records reduce complexity
 
