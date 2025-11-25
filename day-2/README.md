@@ -9,4 +9,11 @@
 - Edit routes so 0.0.0.0/0 uses the IGW
 - Launch instances inside subnets
     - e.g. private db, public app
-    
+
+
+### Removal Order
+- Terminate instances inside VPC
+- Delete the SGs in the VPC
+- Delete the VPC
+    - This will delete all remaining components at the same time (IGW, RTs, Subnets)
+
