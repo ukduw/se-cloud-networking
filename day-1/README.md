@@ -121,6 +121,7 @@ Subnet mask:
 ![Subnet mask anatomy](diagrams/Subnet-masks.png)
 
 **An IP address belongs to exactly one subnet**
+- And, each subnet exists in one Availability Zone (AZ)
 
 **A subnet groups multiple IP addresses**
 
