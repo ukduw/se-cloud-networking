@@ -155,6 +155,8 @@ Allows private resources to access the internet **without being exposed to it.**
 - **Translates** internet private IPs into one public IP
 - Private instances remain unreachable from the public internet
 
+NATs are charged per hour, while IGWs are free.
+
 **Architecture**   
 The most common architecture is **public + private subnet architecture**. 3-tier architecture for cloud environments:
 
