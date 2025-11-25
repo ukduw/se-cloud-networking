@@ -7,4 +7,6 @@
 - Make the IGW
     - Attach it to the VPC
 - Edit routes so 0.0.0.0/0 uses the IGW
-
+- Launch instances inside subnets
+    - e.g. private db, public app
+    
