@@ -10,6 +10,12 @@ IaC tools can be classified as:
 - **Configuration orchestration (Terraform)**: provisioning of cloud resources
 - **Configuration management (Ansible)**: maintaining a desired state in already-provisioned resources
 
+**Terraform ubiquity**   
+- Cloud agnostic
+- Provisioning tool
+- Modular
+- Stepwise - more easily debuggable
+
 Terraform uses **HCL** (HashiCorp Configuration Language) - this allows engineers to describe what they want ("desired state" - this is **declarative logic**) **rather than writing imperative logic on how to do it**.
 
 ### Industries, companies using Terraform
