@@ -21,3 +21,4 @@ resource "aws_instance" "basic_instance" {
 
 
 
+# terraform init, plan, destroy
