@@ -12,7 +12,15 @@ IaC tools can be classified as:
 
 Terraform uses **HCL** (HashiCorp Configuration Language) - this allows engineers to describe what they want ("desired state" - this is **declarative logic**) **rather than writing imperative logic on how to do it**.
 
+### Industries, companies using Terraform
+IT services, software development, finance, business services...
 
+JPMorgan Chase, Capital One, Netflix, Cisco, IBM, Oracle, PwC, Home Depot...
 
-5. Examples of companies/industries that are using Terraform?
-6. How does Terraform connect/communicate with AWS?
+### Terraform and AWS
+Provide Terraform with AWS access key and secret key. Terraform can then use them and call required AWS APIs to execute its templates for resource creations.
+
+`terraform init`
+
+During init, Terraform searches the config for providers referenced, such as AWS, and downloads the required plugins required to communicate with them. Terraform can then codify APIs into declarative files.
+
