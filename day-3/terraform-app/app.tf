@@ -9,13 +9,19 @@ resource "aws_instance" "basic_instance" {
     instance_type = "t3.micro"
     associate_public_ip_address = true
     subnet_id = 
-    security_groups = 
+    security_groups = []
 
     key_name = se-edmund-key-pair
 
     user_data = <<-EOF
                 #!/bin/bash
-
+                sleep 15
+                export DB_HOST=mongodb://<DB-IPADDRESS>:27017/posts
+                cd /home/ubuntu
+                cd se-test-app/nodejs20-se-test-app-2025/app
+                sudo npm install
+                node seeds/seed.js
+                pm2 start app.js
 
     # Name instance on AWS
     tags = {
