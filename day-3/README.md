@@ -35,3 +35,25 @@ Provide Terraform with AWS access key and secret key. Terraform can then use the
 
 During init, Terraform searches the config for providers referenced, such as AWS, and downloads the required plugins required to communicate with them. Terraform can then codify APIs into declarative files.
 
+
+### Basic TF Commands
+- `terraform plan`
+- `teraform apply`
+- `terraform destroy`
+
+
+### TF State
+Terraform stores the state of your managed infrastructure and configuration in a terraform.tfstate file.
+- Keeps track of metadata
+- Improves performance for large infrastructures
+
+The state is used to determine which changes to make to the infrastructure
+- Before any operation, TF refreshes to update the state with the real infrastructure
+
+The primary purpose of tfstate is to store bindings between objects in a remote system and resource instances declared in the user's config, which is updated whenever objects are updated/deleted in config changes.
+
+**tfstate is sensitive information since it stores every detail about the infrastructure/resources**
+- **Shouldn't be pushed to repos**
+- **Recommended to store it in HCP Terraform to version, encrypt, and transfer to team when working collaboratively**
+
+
