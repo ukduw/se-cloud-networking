@@ -1,4 +1,4 @@
-# Infrastructure as a Service (IaaS)
+# Infrastructure as Code (IaC)
 
 
 
