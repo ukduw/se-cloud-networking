@@ -11,6 +11,8 @@
 The above can be done manually or via **awscli**   
 - `sudo apt install awscli`
     - `aws --version` to check
+    - **NOTE: UBUNTU 24.04 ONWARD, does not include the awscli package; can only be installed with snap**
+        - `sudo snap install aws-cli --classic`
 - `aws configure`
     - You will be prompted to enter the following:
         - **AWS Acess Key ID**: YOUR_KEY_ID
