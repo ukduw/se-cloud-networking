@@ -13,7 +13,7 @@ resource "aws_instance" "app_instance" {
     key_name = "se-edmund-key-pair"
 
     user_data = templatefile("user-data.sh", {
-        database_ip = aws_instance.db_instance.public_ip
+        DATABASE_IP = aws_instance.db_instance.public_ip
     })
 
     # Ensure db is created first
