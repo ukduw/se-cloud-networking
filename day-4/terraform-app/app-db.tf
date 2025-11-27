@@ -15,6 +15,7 @@ resource "aws_vpc" "main" {
     }
 }
 
+
 # === Subnets ===
 resource "aws_subnet" "subnet_private" {
     vpc_id              = aws_vpc.main.id
@@ -36,6 +37,7 @@ resource "aws_subnet" "subnet_public" {
     }
 }
 
+
 # === IGW ===
 resource "aws_internet_gateway" "igw" {
     vpc_id = aws_vpc.main.id
@@ -44,6 +46,7 @@ resource "aws_internet_gateway" "igw" {
         Name = "se-edmund-tf-igw"
     }
 }
+
 
 # === RT ===
 resource "aws_route_table" "public_rt" {
@@ -59,11 +62,13 @@ resource "aws_route_table" "public_rt" {
     }
 }
 
+
 # === RT association ===
 resource "aws_route_table_association" "public_association" {
     subnet_id       = aws_subnet.subnet_public.id
     route_table_id  = aws_route_table.public_rt.id
 }
+
 
 # === SGs ===
 resource "aws_security_group" "db_sg" {
@@ -124,6 +129,7 @@ resource "aws_security_group" "app_sg" {
         cidr_blocks= ["0.0.0.0/0"]
     }
 }
+
 
 # === EC2 instances ===
 resource "aws_instance" "db_instance" {
