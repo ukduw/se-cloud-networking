@@ -7,9 +7,9 @@ resource "aws_instance" "db_instance" {
     ami = "ami-068be8a2a1c4f493f"
     instance_type = "t3.micro"
     associate_public_ip_address = false
-    security_group_id = "sg-092ccb39a6de1646e"
+    security_groups = ["se-edmund-mongodb-sg"]
 
-    key_name = se-edmund-key-pair
+    key_name = "se-edmund-key-pair"
 
     # Name instance on AWS
     tags = {
