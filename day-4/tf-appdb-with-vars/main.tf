@@ -4,25 +4,11 @@ provider "aws" {
 }
 
 # Service/resource
-resource "aws_instance" "db_instance" {
-    ami = "ami-068be8a2a1c4f493f"
-    instance_type = "t3.micro"
-    associate_public_ip_address = false
-    security_groups = ["se-edmund-mongodb-sg"]
-
-    key_name = "se-edmund-key-pair"
-
-    # Name instance on AWS
-    tags = {
-        Name = "se-edmund-tf-db"
-    }
-}
-
 resource "aws_instance" "app_instance" {
     ami = var.app_ami_id
     instance_type = var.app_instance_type
     associate_public_ip_address = true
-    security_groups = ["se-edmund-node20-app-sg"]
+    security_groups = [var.app_sg]
 
     key_name = var.app_key_pair
 
