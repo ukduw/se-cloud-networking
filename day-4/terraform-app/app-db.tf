@@ -131,7 +131,7 @@ resource "aws_instance" "db_instance" {
     instance_type               = var.db_instance_type
     associate_public_ip_address = false
     subnet_id                   = aws_subnet.subnet_private.id
-    security_groups             = []
+    security_groups             = [aws_security_group.db_sg.id]
 
     key_name                    = var.db_key_pair
 
@@ -145,7 +145,7 @@ resource "aws_instance" "app_instance" {
     instance_type               = var.instance_type
     associate_public_ip_address = true
     subnet_id                   = aws_subnet.subnet_public.id
-    security_groups             = []
+    security_groups             = [aws_security_group.app_sg.id]
 
     key_name                    = var.app_key_pair
 
