@@ -74,60 +74,33 @@ resource "aws_route_table_association" "public_association" {
 resource "aws_security_group" "db_sg" {
     name    = "se-edmund-tf-db-sg"
     vpc_id  = aws_vpc.main.id
+}
 
-    ingress {
-        from_port   = 27017
-        to_port     = 27017
-        protocol    = "tcp"
-        cidr_blocks = ["0.0.0.0/0"]
-    }
+resource "aws_security_group_rule" "db_sg_ingress" {
+    for_each = toset(var.db_ports)
 
-    ingress {
-        from_port   = 22
-        to_port     = 22
-        protocol    = "tcp"
-        cidr_blocks = ["0.0.0.0/0"]
-    }
-
-    egress {
-        from_port   = 0
-        to_port     = 0
-        protocol    = "-1"
-        cidr_blocks = ["0.0.0.0/0"]
-    }
+    type                = "ingress"
+    from_port           = each.key
+    to_port             = each.key
+    protocol            = "tcp"
+    cidr_blocks         = ["0.0.0.0/0"]
+    security_group_id   = aws_security_group.db_sg.id
 }
 
 resource "aws_security_group" "app_sg" {
     name    = "se-edmund-tf-app-sg"
     vpc_id  = aws_vpc.main.id
+}
 
-    ingress {
-        from_port   = 3000
-        to_port     = 3000
-        protocol    = "tcp"
-        cidr_blocks = ["0.0.0.0/0"]
-    }
+resource "aws_security_group_rule" "app_sg_ingress" {
+    for_each = toset(var.app_ports)
 
-    ingress {
-        from_port   = 80
-        to_port     = 80
-        protocol    = "tcp"
-        cidr_blocks = ["0.0.0.0/0"]
-    }
-
-    ingress {
-        from_port   = 22
-        to_port     = 22
-        protocol    = "tcp"
-        cidr_blocks = ["0.0.0.0/0"]
-    }
-
-    egress {
-        from_port   = 0
-        to_port     = 0
-        protocol    = "-1"
-        cidr_blocks = ["0.0.0.0/0"]
-    }
+    type                = "ingress"
+    from_port           = each.key
+    to_port             = each.key
+    protocol            = "tcp"
+    cidr_blocks         = ["0.0.0.0/0"]
+    security_group_id   = aws_security_group.app_sg.id
 }
 
 
