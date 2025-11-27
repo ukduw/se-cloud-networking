@@ -93,7 +93,7 @@ resource "aws_security_group" "app_sg" {
 }
 
 resource "aws_security_group_rule" "app_sg_ingress" {
-    for_each = {for port in var.db_ports: port => port}
+    for_each = {for port in var.app_ports: port => port}
 
     type                = "ingress"
     from_port           = each.key
