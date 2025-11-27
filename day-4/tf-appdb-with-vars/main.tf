@@ -19,12 +19,12 @@ resource "aws_instance" "db_instance" {
 }
 
 resource "aws_instance" "app_instance" {
-    ami = "ami-0b985cf5be254fc1a"
-    instance_type = "t3.micro"
+    ami = var.app_ami_id
+    instance_type = var.app_instance_type
     associate_public_ip_address = true
     security_groups = ["se-edmund-node20-app-sg"]
 
-    key_name = "se-edmund-key-pair"
+    key_name = var.app_key_pair
 
     user_data = templatefile("user-data.sh", {
         DATABASE_IP = aws_instance.db_instance.public_ip
