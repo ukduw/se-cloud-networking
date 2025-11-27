@@ -8,9 +8,9 @@ resource "aws_instance" "app_instance" {
     ami = "ami-0b985cf5be254fc1a"
     instance_type = "t3.micro"
     associate_public_ip_address = true
-    security_group_id = "sg-03d9f306bc305d7a6"
+    security_groups = ["se-edmund-node20-app-sg"]
 
-    key_name = se-edmund-key-pair
+    key_name = "se-edmund-key-pair"
 
     user_data = file("./user-data.sh")
 
