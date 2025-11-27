@@ -121,7 +121,7 @@ resource "aws_instance" "db_instance" {
 
 resource "aws_instance" "app_instance" {
     ami                         = var.app_ami_id
-    instance_type               = var.instance_type
+    instance_type               = var.app_instance_type
     associate_public_ip_address = true
     subnet_id                   = aws_subnet.subnet_public.id
     security_groups             = [aws_security_group.app_sg.id]
