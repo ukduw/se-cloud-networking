@@ -67,9 +67,63 @@ resource "aws_route_table_association" "public_association" {
 
 # === SGs ===
 resource "aws_security_group" "db_sg" {
+    name= "se-edmund-tf-db-sg"
+    vpc_id= aws_vpc.main.id
 
+    ingress {
+        from_port= 27017
+        to_port= 27017
+        protocol= "tcp"
+        cidr_blocks= ["0.0.0.0/0"]
+    }
+
+    ingress {
+        from_port= 22
+        to_port= 22
+        protocol= "tcp"
+        cidr_blocks= ["0.0.0.0/0"]
+    }
+
+    egress {
+        from_port= 0
+        to_port= 0
+        protocol= "-1"
+        cidr_blocks= ["0.0.0.0/0"]
+    }
 }
 
+resource "aws_security_group" "app_sg" {
+    name= "se-edmund-tf-app-sg"
+    vpc_id= aws_vpc.main.id
+
+    ingress {
+        from_port= 3000
+        to_port= 3000
+        protocol= "tcp"
+        cidr_blocks= ["0.0.0.0/0"]
+    }
+
+    ingress {
+        from_port= 80
+        to_port= 80
+        protocol= "tcp"
+        cidr_blocks= ["0.0.0.0/0"]
+    }
+
+    ingress {
+        from_port= 22
+        to_port= 22
+        protocol= "tcp"
+        cidr_blocks= ["0.0.0.0/0"]
+    }
+
+    egress {
+        from_port= 0
+        to_port= 0
+        protocol= "-1"
+        cidr_blocks= ["0.0.0.0/0"]
+    }
+}
 
 # === EC2 instances ===
 resource "aws_instance" "db_instance" {
