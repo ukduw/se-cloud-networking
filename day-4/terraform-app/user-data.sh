@@ -1,7 +1,7 @@
 #!/bin/bash
 sleep 15
 
-DATABASE_IP=$1
+export DATABASE_IP=$1
 export DB_HOST=mongodb://$DATABASE_IP:27017/posts
 
 cd /home/ubuntu
