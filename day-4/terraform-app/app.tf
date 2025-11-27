@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 # Service/resource
-resource "aws_instance" "basic_instance" {
+resource "aws_instance" "app_instance" {
     ami = "ami-0b985cf5be254fc1a"
     instance_type = "t3.micro"
     associate_public_ip_address = true
@@ -12,15 +12,7 @@ resource "aws_instance" "basic_instance" {
 
     key_name = se-edmund-key-pair
 
-    user_data = <<-EOF
-                #!/bin/bash
-                sleep 15
-                export DB_HOST=mongodb://<DB-IPADDRESS>:27017/posts
-                cd /home/ubuntu
-                cd se-test-app/nodejs20-se-test-app-2025/app
-                sudo npm install
-                node seeds/seed.js
-                pm2 start app.js
+    user_data = file("./user-data.sh")
 
     # Name instance on AWS
     tags = {
