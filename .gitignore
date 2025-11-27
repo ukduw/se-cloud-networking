@@ -3,3 +3,4 @@ vpc-deploy-screens/
 terraform.tfstate
 terraform.tfstate.backup
 variable.tf
+*.tfvars
