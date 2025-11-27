@@ -1,7 +1,9 @@
 #!/bin/bash
 sleep 15
 
-export DB_HOST=mongodb://<DB-IPADDRESS>:27017/posts
+DATABASE_IP=$1
+export DB_HOST=mongodb://$DATABASE_IP:27017/posts
+
 cd /home/ubuntu
 cd se-test-app/nodejs20-se-test-app-2025/app
 
