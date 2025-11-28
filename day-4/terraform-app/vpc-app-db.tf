@@ -3,7 +3,24 @@ provider "aws" {
     region = var.aws_region
 }
 
+provider "github" {
+    token = var.github_token
+}
+
+
+
 # Service/resource blocks
+# === GitHub ===
+resource "github_repository" "tf_test_repo" {
+    name    = "tf-test-repo"
+    visibility = "private"
+}
+
+output "github_repo_url" {
+    value = github_repository.tf_test_repo.http_clone_url
+}
+
+
 # === VPC ===
 resource "aws_vpc" "main" {
     cidr_block          = var.vpc_cidr
