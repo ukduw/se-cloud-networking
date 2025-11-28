@@ -5,7 +5,7 @@
 
 
 ### Variables
-See variable.tf for syntax and notes
+See variable.tf files (in /terraform-app and /tf-appdb-with-vars) for syntax and notes
 - Call with var.variable_name
 
 
