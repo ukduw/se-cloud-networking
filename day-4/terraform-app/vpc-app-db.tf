@@ -74,6 +74,13 @@ resource "aws_route_table_association" "public_association" {
 resource "aws_security_group" "db_sg" {
     name    = "se-edmund-tf-db-sg"
     vpc_id  = aws_vpc.main.id
+
+    egress {
+        from_port= 0
+        to_port= 0
+        protocol= "-1"
+        cidr_blocks= ["0.0.0.0/0"]
+    }
 }
 
 resource "aws_security_group_rule" "db_sg_ingress" {
@@ -90,6 +97,13 @@ resource "aws_security_group_rule" "db_sg_ingress" {
 resource "aws_security_group" "app_sg" {
     name    = "se-edmund-tf-app-sg"
     vpc_id  = aws_vpc.main.id
+
+    egress {
+        from_port= 0
+        to_port= 0
+        protocol= "-1"
+        cidr_blocks= ["0.0.0.0/0"]
+    }
 }
 
 resource "aws_security_group_rule" "app_sg_ingress" {
