@@ -53,7 +53,7 @@ resource "aws_route_table" "public_rt" {
     vpc_id = aws_vpc.main.id
 
     route {
-        cidr_block = "0.0.0.0/0"
+        cidr_block = var.cidr_default
         gateway_id = aws_internet_gateway.igw.id
     }
 
@@ -79,7 +79,7 @@ resource "aws_security_group" "db_sg" {
         from_port= 0
         to_port= 0
         protocol= "-1"
-        cidr_blocks= ["0.0.0.0/0"]
+        cidr_blocks= [var.cidr_default]
     }
 }
 
@@ -90,7 +90,7 @@ resource "aws_security_group_rule" "db_sg_ingress" {
     from_port           = each.key
     to_port             = each.key
     protocol            = "tcp"
-    cidr_blocks         = ["0.0.0.0/0"]
+    cidr_blocks         = [var.cidr_default]
     security_group_id   = aws_security_group.db_sg.id
 }
 
@@ -102,7 +102,7 @@ resource "aws_security_group" "app_sg" {
         from_port= 0
         to_port= 0
         protocol= "-1"
-        cidr_blocks= ["0.0.0.0/0"]
+        cidr_blocks= [var.cidr_default]
     }
 }
 
@@ -113,7 +113,7 @@ resource "aws_security_group_rule" "app_sg_ingress" {
     from_port           = each.key
     to_port             = each.key
     protocol            = "tcp"
-    cidr_blocks         = ["0.0.0.0/0"]
+    cidr_blocks         = [var.cidr_default]
     security_group_id   = aws_security_group.app_sg.id
 }
 
