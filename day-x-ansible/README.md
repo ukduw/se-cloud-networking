@@ -5,6 +5,7 @@
     - **Orchestration**, automating multi-step processes across machines
     - **Cloud provisioning**
     - **Network automation**
+    - **CI/CD**, automating testing, building, deploying apps
 
 - **Declarative**: complex tasks are carried out via readable YAML "playbooks"
     - **Idempotent**, supporting various platforms and cloud environments - run same playbook = same resulting state
