@@ -55,6 +55,17 @@ ansible-playbook -i inventory_file ansible-playbook-ex.yaml
 ansible webservers -i inventory_file -m service -a "name=nginx state=started"
 ```
 
+### Common Ansible modules
+- **apt**: Manages packages on Debian-based systems
+- **yum**: Manages packages on RedHat-based systems
+- **service**: Manages system services (start, stop, restart)
+- **copy**: Copies files from local machine to remote server
+- **file**: Manages file properties (permissions, ownership...)
+- **user**: Creates or manages user accounts
+- **git**: Manages git repos
+- Example:
+
+
 
 ### Tasks
 - Tasks can include:
