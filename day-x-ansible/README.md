@@ -46,15 +46,16 @@ db.example1.com
 
 
 ## Use
-```
-sudo apt install ansible
-ansible-playbook -i inventory_file ansible-playbook-ex.yaml
-```
-- **Ad-hoc command** to check a service is running on remote server (checks if `nginx` is running on all `webservers`):
-`ansible webservers -i inventory_file -m service -a "name=nginx state=started"`
-- **Ansible vault** to encrypt sensitive data:
-    - Allows storage of API keys, etc., in playbooks and inventory files
-`ansible-vault create secret.yml`
+`sudo apt install ansible`   
+`ansible-playbook -i inventory_file ansible-playbook-ex.yaml`
+
+**Ad-hoc command** (checks if `nginx` is running on all `webservers`):   
+`ansible webservers -i inventory_file -m service -a "name=nginx state=started"`   
+To check a service is running on remote server
+
+**Ansible vault** to encrypt sensitive data:   
+`ansible-vault create secret.yml`   
+Allows storage of API keys, etc., in playbooks and inventory files   
 
 ### Common Ansible modules
 - **apt**: Manages packages on Debian-based systems
