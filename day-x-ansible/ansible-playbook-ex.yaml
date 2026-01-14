@@ -1,0 +1,13 @@
+---
+- name: Install nginx on web server
+  hosts: webservers   # specifies which group of machines playbook applies to
+  become: yes   # runs tasks as sudo
+  tasks:  # list of steps to be executed
+    - name: Install nginx
+      apt:  # ansible module for managing packages on debian-based systems
+        name: nginx
+        state: present
+    - name: Start nginx service
+      service:  # ansible module for managing system services
+        name: nginx
+        state: started
