@@ -11,12 +11,28 @@
     - **Idempotent**, supporting various platforms and cloud environments - run same playbook = same resulting state
 
 
-## Use
-- Uses **YAML "playbooks"** (task automation):
+## Anatomy
+### Uses **YAML "playbooks"** (task automation):
 ![Ansible YAML anatomy](diagrams/ansible-yaml-anatomy.png)
 
-- Uses **agentless architecture**, so can communicate with devices without requiring an application or service to be installed on the managed node.
-    - Uses **SSH** (or **WinRM for windows**) to connect remotely to systems without installing software on them
+### Uses **agentless architecture**, so can communicate with devices without requiring an application or service to be installed on the managed node.
+- **SSH** (or **WinRM for windows**) to connect remotely to systems without installing software on them
+
+### Uses an **inventory file** to define which systems to be managed, e.g.:
+```
+[webservers]
+url.example1.com
+url.example2.com
+
+[dbservers]
+db.example1.com
+```
+
+
+## Use
+```
+sudo apt install ansible
+```
 
 
 ### Tasks
