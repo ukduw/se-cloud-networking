@@ -1,6 +1,6 @@
 # Ansible
 - Open-souroce automation tool
-    - **Config management**
+    - Server **Config management**
     - **App deployment** (and updates)
     - **Orchestration**, automating multi-step processes across machines
     - **Cloud provisioning**
