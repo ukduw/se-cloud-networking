@@ -51,9 +51,10 @@ sudo apt install ansible
 ansible-playbook -i inventory_file ansible-playbook-ex.yaml
 ```
 - **Ad-hoc command** to check a service is running on remote server (checks if `nginx` is running on all `webservers`):
-```
-ansible webservers -i inventory_file -m service -a "name=nginx state=started"
-```
+`ansible webservers -i inventory_file -m service -a "name=nginx state=started"`
+- **Ansible vault** to encrypt sensitive data:
+    - Allows storage of API keys, etc., in playbooks and inventory files
+`ansible-vault create secret.yml`
 
 ### Common Ansible modules
 - **apt**: Manages packages on Debian-based systems
@@ -92,6 +93,15 @@ ansible webservers -i inventory_file -m service -a "name=nginx state=started"
         GIT_USERNAME: "{{ github_token }}"
         GIT_PASSWORD: "{{ github_token }}"
 ```
+- **Templates**: Jinja2 templates can be used to dynamically generate config files:
+    - In `config.j2`, **reference variables**, which will be replaced by Ansible when config.conf is generated
+- **Variables** can be defined in playbook, inventory, separate files...
+```
+- name: Generate a config file
+  template:
+    src: "config.j2"
+    dest: "/etc/app/config.conf"
+```
 
 
 ### Tasks
@@ -99,5 +109,32 @@ ansible webservers -i inventory_file -m service -a "name=nginx state=started"
     - Provisioning servers
     - Managing updates
     - Automating workflows across different systems
+
+
+### Ansible Roles
+- Playbooks can be organized into reusable components as "roles"
+- Roles can be defined for tasks, like installing a web server, creating users, configuring network settings...
+- Role anatomy:
+    - Tasks
+    - Handlers (special tasks that only run when notified by another task, e.g. restart a service when config file changes)
+    - Templates
+    - Variables
+- Role Structure:
+```
+roles/
+    webserver/
+        tasks/
+            main.yml
+        handlers/
+            main.yml
+        templates/
+            index.html.j2
+        defaults/
+            main.yml
+        vars/
+            main.yml
+```
+
+
 
 
