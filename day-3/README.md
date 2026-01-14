@@ -56,4 +56,44 @@ The primary purpose of tfstate is to store bindings between objects in a remote 
 - **Shouldn't be pushed to repos**
 - **Recommended to store it in HCP Terraform to version, encrypt, and transfer to team when working collaboratively**
 
+---
+
+### Terraform alternatives
+Terraform has licensing/vendor lock-in, state management, HCL-only, and scaling complexity concerns, as well as limited collaboration/testing
+- Pulumi
+    - Uses general-purpose languages like TypeScript, Python, Go, .NET, Java
+    - CI/CD, Git
+    - Multi-cloud support (AWS, Azure, GCP, Kubernetes...)
+    - Higher learning curve
+- OpenTofu
+    - Completely open source + no commercial/licensing restrictions
+    - Compatible with existing Terraform modules/workflows
+    - Less mature
+- AWS CloudFormation
+    - Native AWS support
+    - Limited to AWS
+    - JSON/YAML much more verbose than alternatives + poor modularity/abstraction
+- Bicep (Azure)
+    - Native Azure support
+    - Very readable syntax
+    - Modular/reusable
+    - Limited to Azure
+    - Less mature
+- Ansible
+    - Very readable YAML
+    - Agentless (via SSH/WinRM)
+    - Very strong configuration management after orchestration is done
+    - Broad support
+    - Very modular/reusable
+    - Infrastructure provisioning (orchestration) is relatively limited
+    - NO state management
+    - Less idempotent than other declarative tools
+- Chef, Puppet, SaltStack
+    - Mature
+    - Detailed control over system state and compliance
+    - Good for managing long-lived, on-prem workloads
+    - Steep learning curve
+    - Requires agents/daemons
+    - Somewhat outdated for modern IaC practices/workflows
+    - Declining popularity
 
