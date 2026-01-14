@@ -63,8 +63,35 @@ ansible webservers -i inventory_file -m service -a "name=nginx state=started"
 - **file**: Manages file properties (permissions, ownership...)
 - **user**: Creates or manages user accounts
 - **git**: Manages git repos
-- Example:
+- Example (refer to `ansible-playbook-git.yaml`):
+```
+---
+- name: Clone private Git repo
+  hosts: all
+  become: yes
+  vars:
+    repo_url: https://github.com/username/repo_name.git
+    dest_dir: /home/ubuntu/
+    github_token: "{{ lookup('env', 'GITHUB_TOKEN') }}" |
 
+  tasks:
+    - name: Ensure git is installed
+      yum:
+        name: git
+        state: present
+
+    - name: Clone the private repo
+      git:
+        repo: "{{ repo_url }}"
+        dest: "{{ dest_dir }}"
+        version: master     # or specific branch/tag to checkout
+        force: yes
+        accept_hostkey: yes
+       environment:
+        GIT_ASKPASS: /bin/echo
+        GIT_USERNAME: "{{ github_token }}"
+        GIT_PASSWORD: "{{ github_token }}"
+```
 
 
 ### Tasks
