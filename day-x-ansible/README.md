@@ -2,7 +2,7 @@
 - Open-souroce automation tool
     - Server **Config management**
     - **App deployment** (and updates), including database and environment variable configurations
-    - **Orchestration**, automating multi-step processes across machines
+    - **Orchestration**, automating multi-step processes across machines (careful with this term; typically used to refer to resource provision, e.g. via Terraform)
     - **Cloud provisioning**
     - **Network automation**
     - **CI/CD**, automating testing, building, deploying apps
