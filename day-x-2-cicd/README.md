@@ -8,7 +8,7 @@ Set of DevOps practices **automating the software delivery process**
 - **Manually (Delivery)**
 - Or, **automatically (Deployment)**
 
-CI/CD means:
+CI/CD key advantages:
 - Faster releases
 - More frequent testing (so typically less bugs)
 - Better collaboration and fast feedback loops
@@ -31,10 +31,6 @@ A step further than Delivery, this **automates the Deployment of every change th
     - **Maximizes speed and efficiency** in getting newly developed features/fixes to users
 
 
-## Anatomy
-### placeholder
-placeholder
-- placeholder
 
 ### placeholder
 
@@ -56,6 +52,6 @@ codeblock
 
 
 # CI/CD Pipeline
-placeholder
+![CI/CD Pipeline diagram](diagrams/CICD-Pipeline.webp)
 
 
