@@ -59,6 +59,8 @@ AWS CodePipeline (CI/CD, AWS ecosystem)
     - Integration with AWS CodeBuild/CodeDeploy (for reducing config complexity)
 - Customizable pipelines with clearly defined stages and optional manual approvals
 - Very scalable and AWS-level security
+- AWS-limited, steep learning curve, very limited third-part integration (unlike Azure DevOps)
+- Monitoring not as feature-rich as alternatives, especially as scale and complexity grows
 
 Azure DevOps (CI/CD, Azure ecosystem)
 - placeholder
