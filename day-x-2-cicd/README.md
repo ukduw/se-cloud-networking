@@ -38,8 +38,11 @@ Gitlab CI/CD
 Github Actions
 - placeholder
 
-Jenkins
-- placeholder
+Jenkins (CI + basic CD)
+- One of the oldest, most widely used open-source automation servers
+    - Best when you need full control, customization, and open-source
+- Flexible, thousands of plugins, technology-agnostic
+- Somewhat outdated compared to modern tools, maintenance overhead, can be slow/brittle at scale
 
 AWS CodePipeline/Build/Deploy
 - placeholder
