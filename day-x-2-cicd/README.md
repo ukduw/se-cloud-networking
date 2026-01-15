@@ -32,11 +32,16 @@ A step further than Delivery, this **automates the Deployment of every change th
 
 
 ## Common CI/CD Tools
-Gitlab CI/CD
-- placeholder
+Gitlab CI/CD (CI/CD)
+- Built into GitLab repo ecosystem
+- Auto DevOps templates, strong runner ecosystem
+- Can have steep learning curve, runner management overhead balloons at scale
 
-Github Actions
-- placeholder
+Github Actions (CI/CD, tied to git workflows)
+- Integrated CI/CD within GitHub
+    - Native, no need for separate server
+- Marketplace of reusable actions, simple YAML workflows, strong branch/pull request triggers
+- Less mature CD features, can become costly at scale
 
 Jenkins (CI + basic CD)
 - One of the oldest, most widely used open-source automation servers
