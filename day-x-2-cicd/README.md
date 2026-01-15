@@ -53,10 +53,14 @@ Jenkins (CI + basic CD)
 - Flexible, thousands of plugins, technology-agnostic
 - Somewhat outdated compared to modern tools, maintenance overhead, can be slow/brittle at scale
 
-AWS CodePipeline/Build/Deploy
-- placeholder
+AWS CodePipeline (CI/CD, AWS ecosystem)
+- Native integration with AWS ecosystem
+    - Best choice for easy-setup end-to-end CI/CD for AWS-hosted applications
+    - Integration with AWS CodeBuild/CodeDeploy (for reducing config complexity)
+- Customizable pipelines with clearly defined stages and optional manual approvals
+- Very scalable and AWS-level security
 
-Azure DevOps
+Azure DevOps (CI/CD, Azure ecosystem)
 - placeholder
 
 
