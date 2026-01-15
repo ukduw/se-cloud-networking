@@ -20,7 +20,9 @@ This is the **automation of the release of built and tested code**
     - The final deployment to production may still require a manual approval
 
 ### Continuous Deployment (CD)
-
+A step further than Delivery, this **automates the Deployment of every change that passes all stages of the pipeline to production**.
+    - Release happens automatically
+    - **Maximizes speed and efficiency** in getting newly developed features/fixes to users
 
 
 ## Anatomy
