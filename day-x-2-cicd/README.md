@@ -9,9 +9,16 @@ Set of DevOps practices **automating the software delivery process**
 - Or, **automatically (Deployment)**
 
 
+### Continuous Integration (CI)
 In practice, this means **developers merge code changes into main repo frequently**
 - **Each merge triggers an automated build and test sequence**
     - Allows for quick fixes and a stable codebase
+
+### Continuous Delivery (CD)
+
+
+### Continuous Deployment (CD)
+
 
 
 ## Anatomy
