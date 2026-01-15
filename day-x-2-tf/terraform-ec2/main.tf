@@ -23,3 +23,5 @@ resource "aws_instance" "basic_instance_1" {
 
 # terraform init, plan, apply, destroy
 
+# terraform fmt - standardizes file format
+
