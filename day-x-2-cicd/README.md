@@ -15,6 +15,10 @@ CI/CD key advantages:
 - Reduced risk due to smaller, more frequent changes (as opposed to large, infrequent changes)
 
 
+# CI/CD Pipeline
+![CI/CD Pipeline diagram](diagrams/CICD-Pipeline.webp)
+
+
 ### Continuous Integration (CI)
 In practice, this means **developers merge code changes into main repo frequently**
 - **Each merge triggers an automated build and test sequence**
@@ -74,7 +78,5 @@ codeblock
 
 
 
-# CI/CD Pipeline
-![CI/CD Pipeline diagram](diagrams/CICD-Pipeline.webp)
 
 
