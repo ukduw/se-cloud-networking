@@ -62,25 +62,12 @@ AWS CodePipeline (CI/CD, AWS ecosystem)
 - AWS-limited, steep learning curve, very limited third-part integration (unlike Azure DevOps)
 - Monitoring not as feature-rich as alternatives, especially as scale and complexity grows
 
-Azure DevOps (CI/CD, Azure ecosystem)
-- placeholder
+Azure DevOps (CI/CD, complete software dev lifecycle)
+- 
 
 
 
-
-### placeholder
-
-
-
-## Use
-`code here`
-
-```
-codeblock
-```
-
-
-### placeholder
+## 
 
 
 
