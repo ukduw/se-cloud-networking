@@ -9,7 +9,7 @@ provider "aws" {
 
 # Service/resource
 resource "aws_instance" "basic_instance_1" {
-    ami = "ami-0b985cf5be254fc1a"
+    ami = "ami-049442a6cf8319180" # default ubuntu server ami
     instance_type = "t3.micro"
     associate_public_ip_address = true
 
