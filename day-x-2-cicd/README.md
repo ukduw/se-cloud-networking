@@ -15,7 +15,9 @@ In practice, this means **developers merge code changes into main repo frequentl
     - Allows for quick fixes and a stable codebase
 
 ### Continuous Delivery (CD)
-
+This is the **automation of the release of built and tested code**
+- Automation means the **code is always in a deployable, production-ready state**
+    - The final deployment to production may still require a manual approval
 
 ### Continuous Deployment (CD)
 
