@@ -8,6 +8,12 @@ Set of DevOps practices **automating the software delivery process**
 - **Manually (Delivery)**
 - Or, **automatically (Deployment)**
 
+CI/CD means:
+- Faster releases
+- More frequent testing (so typically less bugs)
+- Better collaboration and fast feedback loops
+- Reduced risk due to smaller, more frequent changes (as opposed to large, infrequent changes)
+
 
 ### Continuous Integration (CI)
 In practice, this means **developers merge code changes into main repo frequently**
