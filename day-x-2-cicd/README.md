@@ -31,8 +31,23 @@ A step further than Delivery, this **automates the Deployment of every change th
     - **Maximizes speed and efficiency** in getting newly developed features/fixes to users
 
 
+## Common CI/CD Tools
+Gitlab CI/CD
+- placeholder
 
-### placeholder
+Github Actions
+- placeholder
+
+Jenkins
+- placeholder
+
+AWS CodePipeline/Build/Deploy
+- placeholder
+
+Azure DevOps
+- placeholder
+
+
 
 
 ### placeholder
