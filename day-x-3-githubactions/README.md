@@ -4,7 +4,8 @@ GitHub's **built-in automation platform** and can handle full CI/CD. It allows w
 - **Opening a pull request**
 - Creating a release
 
-Actions can also be triggered via **schedule** (e.g. cron), or **manually**
+Actions can also be triggered via **schedule** (e.g. cron), or **manually**   
+Because Actions is **GitHub-native**, there's **no need for a separate server**, and is **tightly integrated with PRs, commits and releases**.
 
 
 ### Workflows
