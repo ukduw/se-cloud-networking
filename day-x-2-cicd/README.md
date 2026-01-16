@@ -63,11 +63,23 @@ AWS CodePipeline (CI/CD, AWS ecosystem)
 - Monitoring not as feature-rich as alternatives, especially as scale and complexity grows
 
 Azure DevOps (CI/CD, complete software dev lifecycle)
-- 
+- Supports complete software development lifesystem - CI/CD, version control, project management...
+    - Encompasses Azure Pipelines, Boards, Repos, Test Plans
+- Highly versatile (best suited for multi-platform pipelines)
+    - Works with variety of cloud providers, OS, services...
+- Deep third-party integration
+    - Jenkins, GitHub, Docker, Kubernetes...
+    - Azure, AWS...
+- Very detailed control over dependencies, triggers, approvals, deployments...
+- Advanced reporting/analytics
+    - Monitor builds, deployments, pipeline health...
+- Steep learning curve, complexity due to broadness and many tools
+- Potential performance issues with large pipelines
+- Complex pricing for advanced features
+- Less thorough integration with AWS when compared to AWS-specific tools
 
 
 
-## 
 
 
 
