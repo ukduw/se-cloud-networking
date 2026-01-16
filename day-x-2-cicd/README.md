@@ -105,17 +105,14 @@ A step further than Delivery, this **automates the Deployment of every change th
         - Then, **automatically deploy approved changes from master branch to production**
     
 
-
-### placeholder
+### Go
+![Simple Go pipeline](diagrams/golang-ci-pipeline-1024316-1-572177.jpg)
 
 
 ### placeholder
 
 
 ### Amazon Elastic Container Service, GitHub Actions, AWS CodeBuild tests
-
-
-
-
+![Amazon ECS, GitHub Actions, AWS CodeBuild pipeline](diagrams/ecs-actions-awscodebuild-2020010855515.png)
 
 
