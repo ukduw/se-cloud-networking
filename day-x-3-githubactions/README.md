@@ -85,3 +85,20 @@ jobs:
 - Installs dependencies and runs tests
 
 **Results** appear in GitHub **Actions tab**
+
+
+### How to "activate" Actions YAMLs
+Refer to `../../se-test-git`   
+Runs on event when **3 conditions** are true:
+1. YAML exists at `.github/workflows/actions-file.yml`
+2. The file is **on the branch where the event occurs**
+    - e.g. YAML is on a branch rather than main - won't trigger when pushing to main
+3. The workflow has an `on:` trigger that **matches the event**, e.g.
+```
+on:
+  push:
+    branches: [main]
+```
+
+If you push to `main` and this YAML is already on `main`, the workflow triggers
+
