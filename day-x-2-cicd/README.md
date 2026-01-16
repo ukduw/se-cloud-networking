@@ -80,6 +80,21 @@ Azure DevOps (CI/CD, complete software dev lifecycle)
 
 
 
+## Example Pipelines (Complexity: Ascending Order)
+![CI/CD Pipeline diagram](diagrams/cicd-pipeline-1024422-1-572236.jpg)   
+Outline:
+- placeholder
+- placeholder
+
+
+### placeholder
+
+
+### placeholder
+
+
+### Amazon Elastic Container Service, GitHub Actions, AWS CodeBuild tests
+
 
 
 
