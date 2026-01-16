@@ -82,9 +82,28 @@ Azure DevOps (CI/CD, complete software dev lifecycle)
 
 ## Example Pipelines (Complexity: Ascending Order)
 ![CI/CD Pipeline diagram](diagrams/cicd-pipeline-1024422-1-572236.jpg)   
-Outline:
-- placeholder
-- placeholder
+**Outline**:
+- **Source**: in most cases, a pipeline is triggered by a **change in code in the source code repo**
+- **Build**: source code + dependencies used to **build runnable instance**
+    - C/C++, Java, Go... **need to be compiled**
+    - Python, JavaScript, Ruby... **can skip this step**
+    - Regardless of language, **cloud-native software** is typically deployed with **Docker**
+        - In this case, **Docker containers are built at this stage**
+    - **Failure** at the Build stage is indicative with a fundamental problem with the project's config
+- **Test**: **automated** (dev-written) **tests** are run to validate the updated code
+    - **Depending on size/complexity**, this stage can last hours
+    - Large-scale projects run tests in **multiple stages**:
+        - Smoke tests: quick sanity checks
+        - ...
+        - Integration tests: tests the entire system from the user's point of view
+    - These **extensive test suites are typically parallelized** to reduce run time
+    - **Failure** at the Test stage reveals bugs in updated code; must provide feedback for devs quickly
+- **Deploy**: usually **multiple deploy environments** - **beta/staging env** for internal use by product team + **production env** for end-users
+    - Once the runnable instance of code has passed all tests, it's **ready for deployment**
+    - **Agile: tests + real-time monitoring**
+        - Usually **deploy WIP manually to a staging env** for **manual testing and review**
+        - Then, **automatically deploy approved changes from master branch to production**
+    
 
 
 ### placeholder
