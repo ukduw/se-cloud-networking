@@ -19,3 +19,9 @@ jobs:   # series of jobs to be run on event
       - run: npm install
       - run: npm test
 
+
+# triggered on PR or push (to main)
+# runs on ubuntu
+
+# checks code and sets up node.js
+# installs dependencies and runs tests
