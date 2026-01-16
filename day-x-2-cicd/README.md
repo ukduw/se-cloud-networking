@@ -36,24 +36,24 @@ A step further than Delivery, this **automates the Deployment of every change th
 
 
 ## Common CI/CD Tools
-Gitlab CI/CD (CI/CD)
+**Gitlab CI/CD (CI/CD)**
 - Built into GitLab repo ecosystem
 - Auto DevOps templates, strong runner ecosystem
 - Can have steep learning curve, runner management overhead balloons at scale
 
-Github Actions (CI/CD, tied to git workflows)
+**Github Actions (CI/CD, tied to git workflows)**
 - Integrated CI/CD within GitHub
     - Native, no need for separate server
 - Marketplace of reusable actions, simple YAML workflows, strong branch/pull request triggers
 - Less mature CD features, can become costly at scale
 
-Jenkins (CI + basic CD)
+**Jenkins (CI + basic CD)**
 - One of the oldest, most widely used open-source automation servers
     - Best when you need full control, customization, and open-source
 - Flexible, thousands of plugins, technology-agnostic
 - Somewhat outdated compared to modern tools, maintenance overhead, can be slow/brittle at scale
 
-AWS CodePipeline (CI/CD, AWS ecosystem)
+**AWS CodePipeline (CI/CD, AWS ecosystem)**
 - Native integration with AWS ecosystem
     - Best choice for easy-setup end-to-end CI/CD for AWS-hosted applications
     - Integration with AWS CodeBuild/CodeDeploy (for reducing config complexity)
@@ -62,7 +62,7 @@ AWS CodePipeline (CI/CD, AWS ecosystem)
 - AWS-limited, steep learning curve, very limited third-part integration (unlike Azure DevOps)
 - Monitoring not as feature-rich as alternatives, especially as scale and complexity grows
 
-Azure DevOps (CI/CD, complete software dev lifecycle)
+**Azure DevOps (CI/CD, complete software dev lifecycle)**
 - Supports complete software development lifesystem - CI/CD, version control, project management...
     - Encompasses Azure Pipelines, Boards, Repos, Test Plans
 - Highly versatile (best suited for multi-platform pipelines)
