@@ -53,6 +53,7 @@ If successful, run CD
 ```
 
 
+## Use
 ### YAML (CI example)
 Refer to `github-actions-ci-example.yml`   
 Filepath: `.github/workflows/ci.yml`   
