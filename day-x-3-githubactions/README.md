@@ -34,7 +34,7 @@ An **action** is a **reusable unit of logic**
 - e.g. `actions/checkout`, `actions/setup-node`, `docker/build-push-action`
 
 A **runner** is **the machine that executes jobs**
-- **GitHub-hosted** (Ubuntu, Windows, macOS)
+- **GitHub-hosted** (Ubuntu, Windows, macOS) - has time limits...
 - Or, **self-hosted**
 
 
@@ -53,8 +53,32 @@ If successful, run CD
 ```
 
 
-### placeholder
-placeholder
-- placeholder
+### YAML (CI example)
+Refer to `github-actions-ci-example.yml`   
+```
+name: CI
 
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm install
+      - run: npm test
+```
+- Triggered on PR or push (to main)
+- Runs on ubuntu
+- Checks code and sets up node.js
+- Installs dependencies and runs tests
 
