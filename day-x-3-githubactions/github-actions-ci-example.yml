@@ -1,6 +1,6 @@
 name: CI
 
-on:   # event(s) (to trigger jobs)
+on:   # event(s) (to trigger workflow)
   pull_request:
   push:
     branches: [main]  # main branch code changed
