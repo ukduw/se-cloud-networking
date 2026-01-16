@@ -5,9 +5,9 @@ on:   # event(s) (to trigger jobs)
   push:
     branches: [main]  # main branch code changed
 
-jobs:   # series of jobs to be run on event
+jobs:   # series of jobs to be run on event + the runner they're executed on
   test:
-    runs-on: ubuntu-latest  # GitHub-hosted Ubuntu
+    runs-on: ubuntu-latest  # runner: GitHub-hosted Ubuntu
 
     steps:  # steps can contain actions/dependencies, and (imperative) steps
       - uses: actions/checkout@v4
