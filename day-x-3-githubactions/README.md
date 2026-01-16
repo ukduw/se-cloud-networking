@@ -55,6 +55,7 @@ If successful, run CD
 
 ### YAML (CI example)
 Refer to `github-actions-ci-example.yml`   
+Filepath: `.github/workflows/ci.yml`   
 ```
 name: CI
 
@@ -82,3 +83,4 @@ jobs:
 - Checks code and sets up node.js
 - Installs dependencies and runs tests
 
+**Results** appear in GitHub **Actions tab**
