@@ -9,6 +9,7 @@ Because Actions is **GitHub-native**, there's **no need for a separate server**,
 
 
 ### Workflows
+A workflow is the top-level automation, defined in YAMLs in `.github/workflows/`   
 Workflows can:
 - **Build**
 - **Test**
