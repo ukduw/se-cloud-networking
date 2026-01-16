@@ -1,0 +1,21 @@
+name: CI
+
+on:   # event (to trigger jobs)
+  pull_request:
+  push:
+    branches: [main]  # main branch code changed
+
+jobs:   # series of jobs to be run on event
+  test:
+    runs-on: ubuntu-latest  # GitHub-hosted Ubuntu
+
+    steps:  # steps can contain actions/dependencies, and (imperative) steps
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm install
+      - run: npm test
+
