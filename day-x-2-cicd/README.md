@@ -106,13 +106,17 @@ A step further than Delivery, this **automates the Deployment of every change th
     
 
 ### Go
-![Simple Go pipeline](diagrams/golang-ci-pipeline-1024316-1-572177.jpg)
+![Simple Go pipeline diagram](diagrams/golang-ci-pipeline-1024316-1-572177.jpg)
 
 
-### placeholder
+### GitHub, Jenkins, Nutanix Calm
+![GitHub, Jenkins, Nutanix Calm pipeline diagram](diagrams/Git_Calm_Jenkins-pipeline.png)
 
 
 ### Amazon Elastic Container Service, GitHub Actions, AWS CodeBuild tests
-![Amazon ECS, GitHub Actions, AWS CodeBuild pipeline](diagrams/ecs-actions-awscodebuild-2020010855515.png)
+![Amazon ECS, GitHub Actions, AWS CodeBuild pipeline diagram](diagrams/ecs-actions-awscodebuild-2020010855515.png)
+
+
+### ...
 
 
