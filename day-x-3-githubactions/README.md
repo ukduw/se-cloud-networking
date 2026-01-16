@@ -1,5 +1,5 @@
 # GitHub Actions (CI)
-GitHub's **built-in automation platform**. It allows workflows to be **run automatically when certain events happen** in a given **repository**, for example:
+GitHub's **built-in automation platform** and can handle full CI/CD. It allows workflows to be **run automatically when certain events happen** in a given **repository**, for example:
 - **Pushing code**
 - **Opening a pull request**
 - **Creating a release**
