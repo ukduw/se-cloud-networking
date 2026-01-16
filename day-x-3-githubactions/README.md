@@ -9,7 +9,7 @@ Because Actions is **GitHub-native**, there's **no need for a separate server**,
 
 
 ### Workflows
-A workflow is the top-level automation, defined in YAMLs in `.github/workflows/`   
+A **workflow** is the **top-level automation**, defined in **YAMLs** in `.github/workflows/`   
 Workflows can:
 - **Build**
 - **Test**
@@ -20,6 +20,22 @@ Workflows can:
 
 ...the code in the repo
 - Reminder: CI is when changes to repo trigger automated build and test process
+
+A **job** is a **set of steps that run on the same machine**
+- Jobs **can run parallel or depend on each other**
+- Each job runs a new **runner**
+
+A **step** is a **single task**, e.g.
+- Run a shell command
+- Use an **action** (prebuilt automation)
+
+An **action** is a **reusable unit of logic**
+- Can be GitHub- or community-written
+- e.g. `actions/checkout`, `actions/setup-node`, `docker/build-push-action`
+
+A **runner** is **the machine that executes jobs**
+- **GitHub-hosted** (Ubuntu, Windows, macOS)
+- Or, **self-hosted**
 
 
 ### Overview
